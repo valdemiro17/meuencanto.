@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Encanto 💘</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="nomeExibido">💖</h1>
+    <p id="fraseExibida"></p>
+    <img id="imagemExibida" src="" alt="Imagem personalizada" style="max-width: 100%; border-radius: 12px;" />
+    <div id="playerYoutube" style="margin-top: 20px;"></div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nome = urlParams.get("nome") || "Meu amor";
+    const frase = urlParams.get("frase") || "Você é tudo pra mim!";
+    const img = urlParams.get("img");
+    const yt = urlParams.get("yt");
+
+    document.getElementById("nomeExibido").innerText = nome;
+    document.getElementById("fraseExibida").innerText = frase;
+
+    if (img) {
+      document.getElementById("imagemExibida").src = img;
+    }
+
+    if (yt) {
+      const videoID = yt.split("v=")[1]?.split("&")[0];
+      if (videoID) {
+        const embed = `<iframe width="300" height="200" src="https://www.youtube.com/embed/${videoID}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        document.getElementById("playerYoutube").innerHTML = embed;
+      }
+    }
+  </script>
+</body>
+</html>
