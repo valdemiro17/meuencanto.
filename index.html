@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MeuEncanto.fun</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💖 MeuEncanto.fun 💖</h1>
+    <p>Crie uma declaração personalizada com imagem, música e QR Code!</p>
+
+    <form id="form">
+      <input type="text" id="nome" placeholder="Nome da pessoa" required />
+      <textarea id="frase" placeholder="Sua frase romântica (opcional)"></textarea>
+      <input type="file" id="imagem" accept="image/*" />
+      <input type="url" id="youtube" placeholder="Link da música do YouTube" required />
+      <button type="submit">Gerar QR Code</button>
+    </form>
+
+    <div id="qrcode"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
